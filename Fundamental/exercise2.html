@@ -1,0 +1,53 @@
+<script>
+var hargakeju = 10000;
+var hargacoklat = 20000;
+var hargasusu = 25000;
+
+var stockkeju = 5;
+var stockcoklat = 6;
+var stocksusu = 7;
+
+var keju, coklat, susu;
+keju = prompt("Masukkan jumlah keju \n" + "Stock keju: "+ stockkeju);
+if(keju > stockkeju) {
+    alert("Melebihi stock yang tersedia, Stock keju = " + stockkeju)
+}
+coklat = prompt("Masukkan jumlah coklat \n" + "Stock coklat: "+ stockcoklat);
+if(coklat > stockcoklat) {
+    alert("Melebihi stock yang tersedia, Stock coklat = " + stockcoklat)
+}
+susu = prompt("Masukkan jumlah susu \n" + "Stock susu: "+ stocksusu);
+if(susu > stocksusu) {
+    alert("Melebihi stock yang tersedia, Stock susu = " + stocksusu)
+}
+console.log(keju, coklat, susu)
+
+if(keju > stockkeju || coklat > stockcoklat || susu > stockcoklat){
+    alert("Transaksi tidak dapat dilanjutkan,\nkarena ada barang yang melebih stock yang tersedia")
+}
+else if(keju == 0 && coklat == 0 && susu == 0 || keju < 0 || coklat < 0 || susu <0){
+    alert("Transaksi error")
+}
+
+else{
+
+var totalkeju = keju * hargakeju;
+var totalcoklat = coklat * hargacoklat;
+var totalsusu = susu * hargasusu;
+var total = totalkeju + totalcoklat + totalsusu
+
+alert("Detail Pembelanjaan \n\n" +
+    "Keju = " + keju + " x " + hargakeju + " = " + totalkeju + "\n" +
+    "Coklat = " + coklat + " x " + hargacoklat + " = " + totalcoklat + "\n" +
+    "susu = " + susu + " x " + hargasusu + " = " + totalsusu + "\n\n" +
+    "Total = Rp. " + total)
+
+    var biaya = prompt("Masukkan jumlah uang \n" + 
+    "Total yang harus dibayar = Rp. " + total)
+    if(biaya > total){
+    alert("Terima kasih telah berbelanja di toko kami \n" + "Uang kembalian anda Rp. " + (biaya-total))
+    } else if (biaya < total) {
+        alert("Belum dapat melakukan transaksi karena uang yang anda masukkan kurang sebesar Rp. " + (total-biaya))
+    }
+}
+</script>

@@ -1,0 +1,28 @@
+<script>
+
+    var mass = prompt("Masukkan berat badan (kg)");
+    var height = prompt("Masukkan tinggi badan (m)");
+
+    var IMT = (mass/Math.pow(height, 2));
+
+    if(IMT < 18.5 ) {
+        alert("Berat Badan = " + mass + "\n" + 
+        "Tinggi Badan = " + height + "\n\n" + 
+        "Anda memiliki berat badan kurang ideal");
+    } else if(IMT >= 18.5 && IMT <= 24.9) {
+        alert("Berat Badan = " + mass + "\n" + 
+        "Tinggi Badan = " + height + "\n\n" + 
+        "Anda memiliki berat badan ideal");
+    } else if(IMT >= 25.0 && IMT <= 29.9) {
+        alert("Berat Badan = " + mass + "\n" + 
+        "Tinggi Badan = " + height + "\n\n" + 
+        "Anda memiliki berat badan berlebih");
+    } else if(IMT >= 30.0 && IMT <= 39.9) {
+        alert("Berat Badan = " + mass + "\n" + 
+        "Tinggi Badan = " + height + "\n\n" + 
+        "Anda memiliki berat badan sangat berlebih");
+    } else{alert("Berat Badan = " + mass + "\n" + 
+        "Tinggi Badan = " + height + "\n\n" + 
+        "Anda Obesitas")
+    }
+</script>
