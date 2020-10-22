@@ -9,17 +9,19 @@ var stockSusu = 7;
 
 var qtyKeju, qtyCoklat, qtySusu;
 qtyKeju = prompt("Masukkan jumlah keju \n" + "Stock keju: "+ stockKeju);
-if(qtyKeju > stockKeju || qtyKeju < 0) {
-    alert("Error")
-    // if(qtyKeju == stockKeju || qtyKeju <= stockKeju)
+while(qtyKeju > stockKeju || qtyKeju < 0) {
+    alert("Kuantitas tidak sesuai");
+    qtyKeju = prompt("Masukkan jumlah keju \n" + "Stock keju: "+ stockKeju);
 }
 qtyCoklat = prompt("Masukkan jumlah coklat \n" + "Stock coklat: "+ stockCoklat);
-if(qtyCoklat > stockCoklat ||qtyCoklat < 0) {
-    alert("Error")
+while(qtyCoklat > stockCoklat ||qtyCoklat < 0) {
+    alert("Kuantitas tidak sesuai");
+    qtyCoklat = prompt("Masukkan jumlah coklat \n" + "Stock coklat: "+ stockCoklat);
 }
 qtySusu = prompt("Masukkan jumlah susu \n" + "Stock susu: "+ stockSusu);
-if(qtySusu > stockSusu || qtySusu < 0) {
-    alert("Error")
+while(qtySusu > stockSusu || qtySusu < 0) {
+    alert("Kuantitas tidak sesuai");
+    qtySusu = prompt("Masukkan jumlah susu \n" + "Stock susu: "+ stockSusu);
 }
 console.log(qtyKeju, qtyCoklat, qtySusu)
 
@@ -27,7 +29,7 @@ if(qtyKeju > stockKeju || qtyCoklat > stockCoklat || qtySusu > stockCoklat){
     alert("Transaksi tidak dapat dilanjutkan,\nkarena ada barang yang melebihi stock yang tersedia")
 }
 else if(qtyKeju == 0 && qtyCoklat == 0 && qtySusu == 0 || qtyKeju < 0 || qtyCoklat < 0 || qtySusu <0){
-    alert("Mohon input kuantitas")
+    alert("Minimal input kuantitas pada salah satu produk")
 }
 
 else{
@@ -50,8 +52,13 @@ alert("Detail Pembelanjaan \n\n" +
     } else if(biaya > total) {
         alert("Uang kembalian anda Rp. " + (biaya - total));
         alert("Terima kasih telah berbelanja di toko kami");
-    } else if (biaya < total) {
+    }  else if (biaya == 0){
+        alert("Transaksi dibatalkan");
+    } while(biaya < total && biaya > 1) {
         alert("Belum dapat melakukan transaksi karena uang yang anda masukkan kurang sebesar Rp. " + (total-biaya));
+        var biaya = prompt("Masukkan jumlah uang \n" + 
+    "Total yang harus dibayar = Rp. " + total)
     }
+
 }
 </script>
