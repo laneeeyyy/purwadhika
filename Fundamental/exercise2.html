@@ -7,8 +7,10 @@ var hargaSusu = 25000;
 var stockKeju = 5;
 var stockCoklat = 6;
 var stockSusu = 7;
+
 do{
 var qtyKeju, qtyCoklat, qtySusu;
+
 qtyKeju = prompt("Masukkan jumlah keju \n" + "Stock keju: "+ stockKeju);
 while(qtyKeju > stockKeju || qtyKeju < 0 || qtyKeju == null) {
     alert("Kuantitas tidak sesuai \nSisa stock keju: " + stockKeju);
@@ -24,10 +26,7 @@ while(qtySusu > stockSusu || qtySusu < 0 || qtyCoklat == null) {
     alert("Kuantitas tidak sesuai \nSisa stock susu: " + stockSusu);
     qtySusu = prompt("Masukkan jumlah susu \n" + "Stock susu: "+ stockSusu);
 }
-if(qtyKeju > stockKeju || qtyCoklat > stockCoklat || qtySusu > stockSusu){
-    alert("Transaksi tidak dapat dilanjutkan,\nkarena ada barang yang melebihi stock yang tersedia")
-}
-else if(qtyKeju == 0 && qtyCoklat == 0 && qtySusu == 0 || qtyKeju < 0 || qtyCoklat < 0 || qtySusu <0){
+if(qtyKeju == 0 && qtyCoklat == 0 && qtySusu == 0 || qtyKeju < 0 || qtyCoklat < 0 || qtySusu <0){
     alert("Minimal input kuantitas pada salah satu produk")}
 console.log(qtyKeju, qtyCoklat, qtySusu)
 } while((qtyKeju == 0 && qtyCoklat == 0 && qtySusu == 0 || qtyKeju < 0 || qtyCoklat < 0 || qtySusu <0));
