@@ -9,16 +9,16 @@ var stockSusu = 7;
 
 var qtyKeju, qtyCoklat, qtySusu;
 qtyKeju = prompt("Masukkan jumlah keju \n" + "Stock keju: "+ stockKeju);
-if(qtyKeju > stockKeju) {
-    alert("Melebihi stock yang tersedia, Stock keju = " + stockKeju)
+if(qtyKeju > stockKeju || qtyKeju < 0) {
+    alert("Error")
 }
 qtyCoklat = prompt("Masukkan jumlah coklat \n" + "Stock coklat: "+ stockCoklat);
-if(qtyCoklat > stockCoklat) {
-    alert("Melebihi stock yang tersedia, Stock coklat = " + stockCoklat)
+if(qtyCoklat > stockCoklat ||qtyCoklat < 0) {
+    alert("Error")
 }
 qtySusu = prompt("Masukkan jumlah susu \n" + "Stock susu: "+ stockSusu);
-if(qtySusu > stockSusu) {
-    alert("Melebihi stock yang tersedia, Stock susu = " + stockSusu)
+if(qtySusu > stockSusu || qtySusu < 0) {
+    alert("Error")
 }
 console.log(qtyKeju, qtyCoklat, qtySusu)
 
@@ -26,7 +26,7 @@ if(qtyKeju > stockKeju || qtyCoklat > stockCoklat || qtySusu > stockCoklat){
     alert("Transaksi tidak dapat dilanjutkan,\nkarena ada barang yang melebihi stock yang tersedia")
 }
 else if(qtyKeju == 0 && qtyCoklat == 0 && qtySusu == 0 || qtyKeju < 0 || qtyCoklat < 0 || qtySusu <0){
-    alert("Transaksi error")
+    alert("Mohon input kuantitas")
 }
 
 else{
@@ -45,13 +45,12 @@ alert("Detail Pembelanjaan \n\n" +
     var biaya = prompt("Masukkan jumlah uang \n" + 
     "Total yang harus dibayar = Rp. " + total)
     if(biaya == total){
-    alert("Terima kasih telah berbelanja di toko kami")
-    alert("Terima kasih!");
+    alert("Terima kasih telah berbelanja di toko kami");
     } else if(biaya > total) {
         alert("Uang kembalian anda Rp. " + (biaya - total));
         alert("Terima kasih telah berbelanja di toko kami");
     } else if (biaya < total) {
-        alert("Belum dapat melakukan transaksi karena uang yang anda masukkan kurang sebesar Rp. " + (total-biaya))
+        alert("Belum dapat melakukan transaksi karena uang yang anda masukkan kurang sebesar Rp. " + (total-biaya));
     }
 }
 </script>
