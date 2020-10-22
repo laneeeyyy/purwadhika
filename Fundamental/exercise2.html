@@ -31,17 +31,6 @@ if(qtyKeju == 0 && qtyCoklat == 0 && qtySusu == 0 || qtyKeju < 0 || qtyCoklat < 
 console.log(qtyKeju, qtyCoklat, qtySusu)
 } while((qtyKeju == 0 && qtyCoklat == 0 && qtySusu == 0 || qtyKeju < 0 || qtyCoklat < 0 || qtySusu <0));
 
-
-// if(qtyKeju > stockKeju || qtyCoklat > stockCoklat || qtySusu > stockSusu){
-//     alert("Transaksi tidak dapat dilanjutkan,\nkarena ada barang yang melebihi stock yang tersedia")
-// }
-// else if(qtyKeju == 0 && qtyCoklat == 0 && qtySusu == 0 || qtyKeju < 0 || qtyCoklat < 0 || qtySusu <0){
-//     alert("Minimal input kuantitas pada salah satu produk")
-    
-// }
-
-// else{
-
 var totalKeju = qtyKeju * hargaKeju;
 var totalCoklat = qtyCoklat * hargaCoklat;
 var totalSusu = qtySusu * hargaSusu;
@@ -68,8 +57,5 @@ alert("Detail Pembelanjaan \n\n" +
     }
     }
      while (biaya < total && biaya > 1)
-    //     var biaya = prompt("Masukkan jumlah uang \n" + 
-    // "Total yang harus dibayar = Rp. " + total)
-// }
 
 </script>
