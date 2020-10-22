@@ -1,4 +1,5 @@
 <script>
+
 var hargaKeju = 10000;
 var hargaCoklat = 20000;
 var hargaSusu = 25000;
@@ -6,33 +7,41 @@ var hargaSusu = 25000;
 var stockKeju = 5;
 var stockCoklat = 6;
 var stockSusu = 7;
-
+do{
 var qtyKeju, qtyCoklat, qtySusu;
 qtyKeju = prompt("Masukkan jumlah keju \n" + "Stock keju: "+ stockKeju);
-while(qtyKeju > stockKeju || qtyKeju < 0) {
-    alert("Kuantitas tidak sesuai");
+while(qtyKeju > stockKeju || qtyKeju < 0 || qtyKeju == null) {
+    alert("Kuantitas tidak sesuai \nSisa stock keju: " + stockKeju);
     qtyKeju = prompt("Masukkan jumlah keju \n" + "Stock keju: "+ stockKeju);
 }
 qtyCoklat = prompt("Masukkan jumlah coklat \n" + "Stock coklat: "+ stockCoklat);
-while(qtyCoklat > stockCoklat || qtyCoklat < 0) {
-    alert("Kuantitas tidak sesuai");
+while(qtyCoklat > stockCoklat || qtyCoklat < 0 || qtyCoklat == null) {
+    alert("Kuantitas tidak sesuai\nSisa stock coklat: " + stockCoklat);
     qtyCoklat = prompt("Masukkan jumlah coklat \n" + "Stock coklat: "+ stockCoklat);
 }
 qtySusu = prompt("Masukkan jumlah susu \n" + "Stock susu: "+ stockSusu);
-while(qtySusu > stockSusu || qtySusu < 0) {
-    alert("Kuantitas tidak sesuai");
+while(qtySusu > stockSusu || qtySusu < 0 || qtyCoklat == null) {
+    alert("Kuantitas tidak sesuai \nSisa stock susu: " + stockSusu);
     qtySusu = prompt("Masukkan jumlah susu \n" + "Stock susu: "+ stockSusu);
 }
-console.log(qtyKeju, qtyCoklat, qtySusu)
-
-if(qtyKeju > stockKeju || qtyCoklat > stockCoklat || qtySusu > stockCoklat){
+if(qtyKeju > stockKeju || qtyCoklat > stockCoklat || qtySusu > stockSusu){
     alert("Transaksi tidak dapat dilanjutkan,\nkarena ada barang yang melebihi stock yang tersedia")
 }
 else if(qtyKeju == 0 && qtyCoklat == 0 && qtySusu == 0 || qtyKeju < 0 || qtyCoklat < 0 || qtySusu <0){
-    alert("Minimal input kuantitas pada salah satu produk")
-}
+    alert("Minimal input kuantitas pada salah satu produk")}
+console.log(qtyKeju, qtyCoklat, qtySusu)
+} while((qtyKeju == 0 && qtyCoklat == 0 && qtySusu == 0 || qtyKeju < 0 || qtyCoklat < 0 || qtySusu <0));
 
-else{
+
+// if(qtyKeju > stockKeju || qtyCoklat > stockCoklat || qtySusu > stockSusu){
+//     alert("Transaksi tidak dapat dilanjutkan,\nkarena ada barang yang melebihi stock yang tersedia")
+// }
+// else if(qtyKeju == 0 && qtyCoklat == 0 && qtySusu == 0 || qtyKeju < 0 || qtyCoklat < 0 || qtySusu <0){
+//     alert("Minimal input kuantitas pada salah satu produk")
+    
+// }
+
+// else{
 
 var totalKeju = qtyKeju * hargaKeju;
 var totalCoklat = qtyCoklat * hargaCoklat;
@@ -44,21 +53,24 @@ alert("Detail Pembelanjaan \n\n" +
     "Coklat = " + qtyCoklat + " x " + hargaCoklat + " = " + totalCoklat + "\n" +
     "susu = " + qtySusu + " x " + hargaSusu + " = " + totalSusu + "\n\n" +
     "Total = Rp. " + total);
-
+    do{
     var biaya = prompt("Masukkan jumlah uang \n" + 
     "Total yang harus dibayar = Rp. " + total)
+    
     if(biaya == total){
-    alert("Terima kasih telah berbelanja di toko kami");
+    alert("Terima kasih telah berbelanja di toko kami \nUang kembali anda Rp. " + (biaya - total));
     } else if(biaya > total) {
         alert("Uang kembalian anda Rp. " + (biaya - total));
         alert("Terima kasih telah berbelanja di toko kami");
-    }  else if (biaya == 0){
+    } else if(biaya < total && biaya > 1) {
+        alert("Belum dapat melakukan transaksi karena uang yang anda masukkan kurang sebesar Rp. " + (total-biaya)); 
+    } else if (biaya == 0 || biaya == null){
         alert("Transaksi dibatalkan");
-    } while(biaya < total && biaya > 1) {
-        alert("Belum dapat melakukan transaksi karena uang yang anda masukkan kurang sebesar Rp. " + (total-biaya));
-        var biaya = prompt("Masukkan jumlah uang \n" + 
-    "Total yang harus dibayar = Rp. " + total)
     }
+    }
+     while (biaya < total && biaya > 1)
+    //     var biaya = prompt("Masukkan jumlah uang \n" + 
+    // "Total yang harus dibayar = Rp. " + total)
+// }
 
-}
 </script>
