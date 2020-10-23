@@ -39,7 +39,7 @@
 
 var output = "";
 for (var i = 0; i < 5; i++){
-    for(var j = 5; i < j; j--){
+    for(var j = 0; i > j; j++){
         output += "*";
     }
     output += "\n";
