@@ -54,11 +54,21 @@ console.log(buah);
 // Merging 2 Arrays (Concatenating)
 let nama1 = ["Andi", "Budi"];
 let nama2 = ["Felix", "Charles", "Philip"];
+let nama5 = ["Josh", "George", "Winsdton"];
 
 let nama3 = nama1.concat(nama2);
 let nama4 = nama2.concat(nama1);
+let nama6 = nama1.concat(nama2, nama5);
 console.log(nama3);
 console.log(nama4);
+console.log(nama6);
+
+//  2 Dimensi / Di dalam array ada array
+let buah3 = [
+    ["Salak", "Naga"],
+    ["Pisan", "Leci"]
+];
+console.log(buah3)
 
 // let mobil = ["jazz", "brio", "march"]
 // console.log(mobil);
