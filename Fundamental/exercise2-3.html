@@ -12,17 +12,17 @@ do{
 var qtyKeju, qtyCoklat, qtySusu;
 
 qtyKeju = prompt("Masukkan jumlah keju \n" + "Stock keju: "+ stockKeju);
-while(qtyKeju > stockKeju || qtyKeju < 0 || qtyKeju == null) {
+while(qtyKeju > stockKeju || qtyKeju < 0 || qtyKeju == "") {
     alert("Kuantitas tidak sesuai \nSisa stock keju: " + stockKeju);
     qtyKeju = prompt("Masukkan jumlah keju \n" + "Stock keju: "+ stockKeju);
 }
 qtyCoklat = prompt("Masukkan jumlah coklat \n" + "Stock coklat: "+ stockCoklat);
-while(qtyCoklat > stockCoklat || qtyCoklat < 0 || qtyCoklat == null) {
+while(qtyCoklat > stockCoklat || qtyCoklat < 0 || qtyCoklat == "") {
     alert("Kuantitas tidak sesuai\nSisa stock coklat: " + stockCoklat);
     qtyCoklat = prompt("Masukkan jumlah coklat \n" + "Stock coklat: "+ stockCoklat);
 }
 qtySusu = prompt("Masukkan jumlah susu \n" + "Stock susu: "+ stockSusu);
-while(qtySusu > stockSusu || qtySusu < 0 || qtyCoklat == null) {
+while(qtySusu > stockSusu || qtySusu < 0 || qtyCoklat == "") {
     alert("Kuantitas tidak sesuai \nSisa stock susu: " + stockSusu);
     qtySusu = prompt("Masukkan jumlah susu \n" + "Stock susu: "+ stockSusu);
 }
@@ -55,7 +55,6 @@ alert("Detail Pembelanjaan \n\n" +
     } else if(biaya == 0 || biaya == null){
         alert("Transaksi dibatalkan");
     }
-    }
-     while (biaya < total && biaya > 1)
+    }while (biaya < total && biaya > 1);
 
 </script> 
